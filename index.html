@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>716 Sentinel AI | نظام الفحص الاستراتيجي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- بوابة الدخول الأمنية -->
+    <section id="page-auth" class="page active">
+        <div class="auth-card">
+            <div class="scanner-line"></div>
+            <span class="iconify" data-icon="mdi:shield-key-outline" style="font-size: 5rem; color: #00FF41;"></span>
+            <h1>716 SENTINEL</h1>
+            <p>النظام يتطلب رمز التحقق المشفر</p>
+            <input type="password" id="pass-input" placeholder="PASSCODE (1968)">
+            <button onclick="App.verify()" class="btn-main">INITIALIZE SYSTEM</button>
+        </div>
+    </section>
+
+    <!-- لوحة التحكم الرئيسية -->
+    <section id="page-scanner" class="page">
+        <div class="dashboard">
+            <aside class="sidebar">
+                <div class="logo">716 <span style="color:#fff">AI</span></div>
+                <nav>
+                    <div class="nav-item active"><span class="iconify" data-icon="mdi:magnify"></span> فحص جديد</div>
+                    <div class="nav-item"><span class="iconify" data-icon="mdi:shield-check"></span> قواعد البيانات</div>
+                </nav>
+            </aside>
+
+            <main class="content">
+                <header class="main-header">
+                    <h2>محرك التحليل العميق <span id="ver-badge">v5.0 Ultimate</span></h2>
+                    <div class="system-status">الحالة: <span style="color:#00FF41">متصل</span></div>
+                </header>
+
+                <div id="input-section">
+                    <div class="editor-container">
+                        <textarea id="code-input" spellcheck="false" placeholder="// الصق الكود المصدري هنا (C++, JS, Python, PHP, Java, etc...)"></textarea>
+                    </div>
+                    <button onclick="App.startDeepAnalysis()" class="btn-scan-large">بدء الفحص الاستراتيجي</button>
+                </div>
+
+                <div id="training-section" class="hidden">
+                    <div class="ai-brain-container">
+                        <div class="pulse-circle"></div>
+                        <h2 id="status-text">جاري مزامنة 10 سنوات من الخبرة الأمنية...</h2>
+                        <div class="progress-wrapper"><div id="progress-fill"></div></div>
+                        <div id="console-logs"></div>
+                    </div>
+                </div>
+
+                <div id="results-section" class="hidden">
+                    <div id="security-gauge-container"></div>
+                    <div id="vuln-report"></div>
+                    <div class="action-buttons">
+                        <button onclick="App.downloadReport()" class="btn-secondary">تحميل التقرير الكامل</button>
+                        <button onclick="location.reload()" class="btn-main">فحص كود جديد</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <script src="engine.js"></script>
+</body>
+</html>
