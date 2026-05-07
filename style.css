@@ -1,0 +1,29 @@
+:root { --neon: #00FF41; --bg: #020202; --card: #0a0a0a; --border: #1a1a1a; --crit: #ff003c; --warn: #ffaa00; }
+body { background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; overflow: hidden; height: 100vh; }
+#matrix-canvas { position: fixed; inset: 0; z-index: -1; opacity: 0.15; }
+.page { display: none; height: 100vh; }
+.page.active { display: flex; }
+#page-auth { align-items: center; justify-content: center; background: radial-gradient(circle, #0a1f0a 0%, #020202 100%); }
+.auth-card { background: var(--card); padding: 40px; border-radius: 15px; border: 1px solid var(--neon); text-align: center; width: 350px; position: relative; overflow: hidden; }
+.scanner-line { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--neon); box-shadow: 0 0 15px var(--neon); animation: scan 3s infinite linear; }
+@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+.dashboard { display: flex; width: 100%; height: 100%; }
+.sidebar { width: 220px; background: #050505; border-right: 1px solid var(--border); padding: 20px; }
+.logo { font-size: 1.5rem; font-weight: 900; color: var(--neon); margin-bottom: 40px; letter-spacing: 2px; }
+.nav-item { padding: 12px; color: #888; cursor: pointer; border-radius: 8px; margin-bottom: 5px; }
+.nav-item.active { background: #111; color: var(--neon); }
+.content { flex: 1; padding: 30px; overflow-y: auto; }
+.editor-container { background: #080808; border: 1px solid var(--border); border-radius: 12px; }
+textarea { width: 100%; height: 400px; background: transparent; border: none; color: var(--neon); padding: 20px; font-family: monospace; outline: none; resize: none; }
+.btn-scan-large { width: 100%; margin-top: 20px; padding: 20px; background: var(--neon); color: #000; font-weight: 900; border: none; border-radius: 12px; cursor: pointer; }
+.btn-main { background: var(--neon); color: #000; padding: 12px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-secondary { background: #007bff; color: #fff; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; }
+.security-gauge { background: #111; padding: 25px; border-radius: 15px; text-align: center; margin-bottom: 25px; border: 1px solid var(--border); }
+.score-circle { font-size: 3.5rem; font-weight: 900; color: var(--neon); text-shadow: 0 0 20px var(--neon); }
+.vuln-card { background: #0d0d0d; border-right: 5px solid var(--crit); padding: 20px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border); border-right-width: 5px; }
+.exploit-box { background: #1a050a; padding: 12px; border-radius: 6px; margin: 10px 0; color: #ff94a1; border: 1px solid #3d0b14; }
+.fix-box { background: #051a0b; padding: 12px; border-radius: 6px; color: #94ffb8; border: 1px solid #0b3d18; }
+.action-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+.hidden { display: none !important; }
+.progress-wrapper { background: #222; height: 10px; border-radius: 5px; overflow: hidden; margin: 20px 0; }
+#progress-fill { background: var(--neon); height: 100%; width: 0%; transition: 0.3s; }
